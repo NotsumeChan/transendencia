@@ -6,6 +6,8 @@ image a = "ch1/neutral.png"
 image b = "ch2/neutral.png"
 image c = "ch3/neutral.png"
 
+image us = "us.png"
+
 
 label start:
     $ personaje = "0"
@@ -45,6 +47,12 @@ label start:
         jump Inicio3
 
 
-label ShowMenu:
-    return
 
+label Agradecimientos:
+    show us ysize 1.0 xsize 1.0
+
+
+    "Gracias por jugar"
+    "Este juego fue creado por:
+        -Perr0Waton
+        -Notsume"

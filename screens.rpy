@@ -286,51 +286,94 @@ style quick_button_text:
 ## ofrece navegación a los otros menús y al inicio del juego.
 
 screen navigation():
+    if main_menu:
+        hbox:
+            style_prefix "navigation"
 
-    hbox:
-        style_prefix "navigation"
+            xalign 0.5
+            yalign 0.9
+            
 
-        xalign 0.5
-        yalign 0.9
-        
+            spacing gui.navigation_spacing
 
-        spacing gui.navigation_spacing
+            if main_menu:
 
-        if main_menu:
+                textbutton _("Comenzar") action Start()
 
-            textbutton _("Comenzar") action Start()
+            else:
 
-        else:
+                textbutton _("Historial") action ShowMenu("history")
 
-            textbutton _("Historial") action ShowMenu("history")
+                textbutton _("Guardar") action ShowMenu("save")
 
-            textbutton _("Guardar") action ShowMenu("save")
+            textbutton _("Cargar") action ShowMenu("load")
 
-        textbutton _("Cargar") action ShowMenu("load")
+            textbutton _("Configuración") action ShowMenu("preferences")
 
-        textbutton _("Configuración") action ShowMenu("preferences")
+            if _in_replay:
 
-        if _in_replay:
+                textbutton _("Finaliza repetición") action EndReplay(confirm=True)
 
-            textbutton _("Finaliza repetición") action EndReplay(confirm=True)
+            elif not main_menu:
 
-        elif not main_menu:
+                textbutton _("Menú principal") action MainMenu()
 
-            textbutton _("Menú principal") action MainMenu()
+            textbutton _("Info") action ShowMenu("about")
 
-        textbutton _("Info") action ShowMenu("about")
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                ## La ayuda no es necesaria ni relevante en dispositivos móviles.
+                textbutton _("Ayuda") action ShowMenu("help")
 
-            ## La ayuda no es necesaria ni relevante en dispositivos móviles.
-            textbutton _("Ayuda") action ShowMenu("help")
+            if renpy.variant("pc"):
 
-        if renpy.variant("pc"):
+                ## El botón de salida está prohibido en iOS y no es necesario en
+                ## Android y Web.
+                textbutton _("Salir") action Quit(confirm=not main_menu)
+    else:
+        vbox:
+            style_prefix "navigation"
 
-            ## El botón de salida está prohibido en iOS y no es necesario en
-            ## Android y Web.
-            textbutton _("Salir") action Quit(confirm=not main_menu)
+            xalign 0.05
+            yalign 0.5
+            
 
+            spacing gui.navigation_spacing
+
+            if main_menu:
+
+                textbutton _("Comenzar") action Start()
+
+            else:
+
+                textbutton _("Historial") action ShowMenu("history")
+
+                textbutton _("Guardar") action ShowMenu("save")
+
+            textbutton _("Cargar") action ShowMenu("load")
+
+            textbutton _("Configuración") action ShowMenu("preferences")
+
+            if _in_replay:
+
+                textbutton _("Finaliza repetición") action EndReplay(confirm=True)
+
+            elif not main_menu:
+
+                textbutton _("Menú principal") action MainMenu()
+
+            textbutton _("Info") action ShowMenu("about")
+
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+                ## La ayuda no es necesaria ni relevante en dispositivos móviles.
+                textbutton _("Ayuda") action ShowMenu("help")
+
+            if renpy.variant("pc"):
+
+                ## El botón de salida está prohibido en iOS y no es necesario en
+                ## Android y Web.
+                textbutton _("Salir") action Quit(confirm=not main_menu)
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text

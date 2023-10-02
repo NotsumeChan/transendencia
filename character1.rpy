@@ -4,12 +4,13 @@ image Notsume = "ch3/neutral.png"
 
 
 screen mostrarOpt():
-    add "bg/tm/room_01.jpeg" xpos  0 ypos 0 xsize 1.0 ysize 0.9
+    add "bg/tm/room_01.jpeg" xpos  0 ypos 0 xsize 1.0 ysize 1.0
     #add "background.png" xpos 0 ypos 0  #fondo de la pantalla
 
     imagebutton:
-        idle "assets/tm/eleccion_ropa/prenda_01.jpg"
-        hover "assets/tm/eleccion_ropa/prenda_01(hover).jpg"
+        idle "assets/tm/eleccion_ropa/prenda_01.png"
+        hover "assets/tm/eleccion_ropa/prenda_01(hover).png"
+
         xpos 200 
         ypos 200  
         action Jump("opt1")
@@ -30,15 +31,15 @@ screen mostrarOpt():
 
 label opt1:
     "Has seleccionado la Opción 1."
-    return
+    jump Agradecimientos
 
 label opt2:
     "Has seleccionado la Opción 2."
-    return
+    jump Agradecimientos
 
 label opt3:
     "Has seleccionado la Opción 3."
-    return
+    jump Agradecimientos
 
 
 label Inicio1:
