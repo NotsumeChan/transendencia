@@ -1,20 +1,31 @@
 define ch1 = Character('[name]', color="#44d0fa")
-image Ich1 = "1.png"
-image Notsume = "3.png"
+image Ich1 = "ch1/neutral.png"
+image Notsume = "ch3/neutral.png"
 
 
 screen mostrarOpt():
-    add "black.png"
+    add "bg/tm/room_01.jpeg" xpos  0 ypos 0 xsize 1.0 ysize 0.9
     #add "background.png" xpos 0 ypos 0  #fondo de la pantalla
 
-    textbutton "Option_1" action Jump("opt1"):
-        xpos 100 ypos 100  # Define la posición de la opción 1 en la pantalla
+    imagebutton:
+        idle "assets/tm/eleccion_ropa/prenda_01.jpg"
+        hover "assets/tm/eleccion_ropa/prenda_01(hover).jpg"
+        xpos 200 
+        ypos 200  
+        action Jump("opt1")
+    imagebutton:
+        idle "assets/tm/eleccion_ropa/prenda_02.jpg"
+        hover "assets/tm/eleccion_ropa/prenda_02(hover).jpg"
+        xpos 350
+        ypos 550  
+        action Jump("opt2")
 
-    textbutton "Option_2" action Jump("opt2"):
-        xpos 600 ypos 300  # Define la posición de la opción 2 en la pantalla
-
-    textbutton "Option_3" action Jump("opt3"):
-        xpos 300 ypos 500  # Define la posición de la opción 3 en la pantalla
+    imagebutton:
+        idle "assets/tm/eleccion_ropa/prenda_03.jpg"
+        hover "assets/tm/eleccion_ropa/prenda_03(hover).jpg"
+        xpos 1550 
+        ypos 500
+        action Jump("opt3")
 
 label opt1:
     "Has seleccionado la Opción 1."
@@ -45,7 +56,8 @@ label Inicio1:
 
     N "un gusto [name]"
 
-    
+    hide Notsume
+    hide Ich1
 
     jump .Dia2
 
@@ -54,5 +66,7 @@ label .Dia2:
     "al dia siguiente..."
 
     "que deberia escoger para hoy?"
+
+    
     call screen mostrarOpt
 

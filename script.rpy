@@ -2,9 +2,9 @@
 define N = Character("Notsume", color="#9b47ad")
 define audio.background = "audio/Hopes and Dreams.mp3"
 
-image a = "1.png"
-image b = "2.png"
-image c = "3.png"
+image a = "ch1/neutral.png"
+image b = "ch2/neutral.png"
+image c = "ch3/neutral.png"
 
 
 label start:

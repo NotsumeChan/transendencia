@@ -1,6 +1,6 @@
 define ch2 = Character('[name]', color="#ffffff")
-image Ich2 = "2.png"
-image Flan = "1.png"
+image Ich2 = "ch2/neutral.png"
+image Flan = "ch1/neutral.png"
 
 label Inicio2:
 
