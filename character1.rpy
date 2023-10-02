@@ -13,6 +13,7 @@ screen mostrarOpt():
         xpos 200 
         ypos 200  
         action Jump("opt1")
+        
     imagebutton:
         idle "assets/tm/eleccion_ropa/prenda_02.jpg"
         hover "assets/tm/eleccion_ropa/prenda_02(hover).jpg"
