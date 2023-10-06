@@ -20,13 +20,13 @@ label start:
         "con que personaje quieres comenzar la historia?"
 
 
-        "(izquierda) Fran : Trans-Masculino":
+        "(izquierda) Trans-Masculino":
             $ personaje = "1"
 
-        "(centro) Extra : No-Binario":
+        "(centro) No-Binario":
             $ personaje = "2"
 
-        "(derecha) Notsume : Trans-Femenina":
+        "(derecha) Trans-Femenina":
             $ personaje = "3"
             
 
@@ -49,10 +49,10 @@ label start:
 
 
 label Agradecimientos:
-    show us ysize 1.0 xsize 1.0
+    show us 
 
 
     "Gracias por jugar"
-    "Este juego fue creado por:
-        -Perr0Waton
+    "Este juego fue creado por:\n
+        -Perr0Waton\n
         -Notsume"

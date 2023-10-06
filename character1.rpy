@@ -16,15 +16,15 @@ screen mostrarOpt():
         action Jump("opt1")
         
     imagebutton:
-        idle "assets/tm/eleccion_ropa/prenda_02.jpg"
-        hover "assets/tm/eleccion_ropa/prenda_02(hover).jpg"
+        idle "assets/tm/eleccion_ropa/prenda_02.png"
+        hover "assets/tm/eleccion_ropa/prenda_02(hover).png"
         xpos 350
         ypos 550  
         action Jump("opt2")
 
     imagebutton:
-        idle "assets/tm/eleccion_ropa/prenda_03.jpg"
-        hover "assets/tm/eleccion_ropa/prenda_03(hover).jpg"
+        idle "assets/tm/eleccion_ropa/prenda_03.png"
+        hover "assets/tm/eleccion_ropa/prenda_03(hover).png"
         xpos 1550 
         ypos 500
         action Jump("opt3")
