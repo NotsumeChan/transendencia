@@ -1,4 +1,3 @@
-define ch3 = Character("[name]", color="#fb8dff")
 image Ich3 = "ch3/neutral.png"
 image Flan = "ch1/neutral.png"
 
@@ -14,7 +13,7 @@ label Inicio3:
     # Presenta las líneas del diálogo.
     F "hola soy flan y soy un personaje de prueba"
 
-    ch3 "hola soy [name] xd"
+    ch "hola soy [name] xd"
 
     F "un gusto [name]"
 

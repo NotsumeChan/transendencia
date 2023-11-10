@@ -1,4 +1,3 @@
-define ch2 = Character('[name]', color="#ffffff")
 image Ich2 = "ch2/neutral.png"
 image Flan = "ch1/neutral.png"
 
@@ -13,7 +12,7 @@ label Inicio2:
     
     F "hola soy flan y soy un personaje de prueba"
 
-    ch2 "hola soy [name] xd"
+    ch "hola soy [name] xd"
 
     F "un gusto [name]"
     return
