@@ -3,6 +3,10 @@ define N = Character("Notsume", color="#9b47ad")
 define audio.background = "audio/Hopes and Dreams.mp3"
 define ch = Character('[name]', color="#44d0fa")
 
+default rrss = False
+default post = False
+default series = False
+
 image a = "ch1/neutral.png"
 image b = "ch2/neutral.png"
 image c = "ch3/neutral.png"
@@ -96,6 +100,7 @@ label cap1:
             "parece que eso es lo que estás buscando" 
             "A pesar de tener problemas con el idioma, te sientes extrañamente parte de esta comunidad virtual, eso te alegra" 
             "Decides seguir algunos perfiles y guardar algunas publicaciones que llamaron más tu atención."
+            $ rrss = True
             
         "Buscar post de organizaciones al respecto.":
             "Escribes la palabra “Transgenero” en el buscador, logras encontrar entre los resultados algunas organizaciones que pertenecen a Chile"
@@ -110,6 +115,7 @@ label cap1:
             "Esto hace que te sientas confundido por los tecnicismos, pero de todos modos logras captar unas cuantas ideas" 
             "Por otro lado" 
             "te hace sentir seguridad el saber que hay instituciones de  verdad a las que pedir ayuda."
+            $ post = True
 
 
         "Buscar series o películas con personajes transgenero.":
@@ -119,6 +125,85 @@ label cap1:
             "sientes esperanza al ver personas en situaciones parecidas a las que vives" 
             "pero aun así la variedad de reacciones hace que te preguntes cómo reaccionaría la gente alrededor tuyo" 
             "(Nace en ti un sentimiento de incertidumbre)"
+            $ series = True
+
+
+label cap2:
+    "Han pasado algunos días desde tu investigación" 
+    "has estado dándole vueltas a las cosas que aprendiste y crees que es momento de compartir tus ideas con alguien" 
+    "A pesar de que la idea te asusta el poder sacarte el peso de guardar este secreto es algo alentador" 
+    "Pero" 
+    "¿Qué vas a decir?" 
+    "o más preocupante aún" 
+    "¿cómo van a reaccionar? ¿Deberías decirle a tu familia primero?" 
+    "Sabes que tus padres te aman, pero no sabes si están listos para este tipo de conversaciones" 
+    "quiza deberias hablar con alguien a quien le tengas mas confianza y cercanía" 
+    "como uno de tus amigos" 
+    "alguno con el que puedas hablar de lo que sea y sabes que no lo estara contando al resto del grupo" 
+    "O quizá sería mejor hablar con alguien externo" 
+    "alguien que sepa sobre estos temas" 
+    "alguien que haya visto más cosas y pueda entender que no somos todos iguales en este mundo" 
+    "Un montón de dudas se forman en tu cabeza."
+
+    ch "Creo que sera mejor dormir"
+    "Duermes para seguir pensando en esto mañana"
+
+
+    "Los días pasan y ves que hay oportunidades para acercarte a hablar sobre el tema" 
+    "pero aun no sabes a quién" "ni siquiera si estás listo para esto" 
+    "Pero aun así te armas de valor y decides que debes hacerlo. "
+
+    ch "Si no lo hago ahora, quizá no pueda nunca"
+
+    "Contemplas la idea de no hacer nada" 
+    "solo guardar como te sientes para ver si se pasa o si encuentras un momento más perfecto para poder actuar sobre este tema"
+
+    ch "Creo que lo mejor es eso, no hacer nada todavía, hasta que esté más seguro."
+
+
+
+    "Sigues tu vida como siempre intentando no pensar mucho al respecto" 
+    "el sentimiento no se ha pasado pero te sigues repitiendo que va a hacerlo" 
+    "eso hace que le quites importancia"
+    "Un día tu profesora de ciencias empieza a hablar sobre sexualidad y en ello comienza a mencionar otras orientaciones sexuales para dar paso a una charla sobre la diversidad."
+    
+    "menciona la diferencia sobre sexo y genero, hablando de como la identidad de genero es algo independiente de la orientacion sexual. Con esto comienza a dar ejemplos de personas transgenero importantes para la historia del mundo con mucho respeto y admiración. El darte cuenta que alguien cercano acepta esto te hace sentir un poco más aliviado, te da esperanza de decir algo y que sea bien recibido. Al terminar la clase ves como tus compañeras y compañeros siguen hablando del tema, escuchas algunos comentarios que te molestan un poco, pero decides no decir nada. También escuchas algunas preguntas, te gustaría ser parte de la conversación pero aun no te sientes muy seguro al respecto, aun te da miedo que piensen que eres raro y no puedas defenderte.  Al final dejas que los días pasen"
+    "En tu casa buscas información sobre las personas que menciono tu profesora, te hace feliz saber que gente como tu ha existido desde hace mucho tiempo y que han podido hacer cambios para ayudar a los demás. "
+    "En clases ves como tus compañeras y compañeros siguen hablando al respecto, de a poco vas notando como cada vez hay menos comentarios feos y mas palabras de aceptación, quizá eso sea una señal."
+    "Llegas a tu casa y te miras en el espejo."
+
+    ch "No tengo porque sentirme solo, quiero hablar con alguien de esto."
+
+    "Te decidiste a hablarlo, ahora la pregunta es ¿quién? "
+
+    ch "Podría decirle a mi mamá…"
+
+    "La idea no suena mala, pero aun no sabes como reaccionara, quizá debas ver otras opciones."
+
+    ch " hmmm…¿quizá la Bea?"
+
+    "Ha sido tu amiga desde que eran chicos, es tu compañera de puesto en la escuela y con quien más confianza tienes, siempre se cuentan todo, no es una mala idea."
+
+    ch "tal vez alguien que pueda saber del tema…"
+
+    ch "Alguien mayor… el hermano de la Bea quizá sepa algo."
+
+    "El hermano mayor de tu mejor amiga, va a la universidad y sabes que se junta con mucha gente muy diferente, de seguro él sabe algo, o conoce a alguien que pueda ayudarte. Debes decidir bien si quieres ayuda."
+
+    menu:
+        "¿Con quién vas a hablar?"
+
+        if rrss or post:
+            "Hablar con tu mamá.":
+                "hablas con tu mamá te dice que no entiende pero te apoya, te advierte que quizá se vaya con la edad"
+
+        if rrss or series
+            "Hablar con tu mejor amiga.":
+                "en un principio piensa que estás bromeando, le preocupa que las cosas entre ustedes cambien, pero te apoya de manera incondicional, te pregunta si quieres decirle a su hermano para que te ayude a conseguir cosas que puedan ayudarte"
+
+        if post or series:
+            "Hablar con el hermano de tu mejor amiga.":
+                "Te habla de las personas que conoce que son trans, te sientes aceptado y te ayuda a encontrar cosas que puedan ayudarte a sentirte mejor, te incentiva a hablar con su hermana para que no la dejes fuera de las cosas"
 
 
 label Agradecimientos:
