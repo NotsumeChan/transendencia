@@ -7,9 +7,9 @@ default rrss = False
 default post = False
 default series = False
 
-image a = "ch1/neutral.png"
-image b = "ch2/neutral.png"
-image c = "ch3/neutral.png"
+image mc = "mc/Prota.png"
+image mcM = "mc/Prota_espejo.png"
+
 
 image us = "us.png"
 
@@ -17,9 +17,7 @@ image us = "us.png"
 label start:
     $ personaje = "0"
 
-    show a at left
-    show b at center
-    show c at right
+    show mc at center
 
     menu:
         "con que personaje quieres comenzar la historia?"
@@ -43,21 +41,13 @@ label start:
         if not name:
             name = "Anónimo"
 
-    hide a
-    hide b
-    hide c
+    hide mc
 
     jump prologo
 
-if personaje == "1":
-    jump Inicio1
-if personaje == "2":
-    jump Inicio2
-if personaje == "3":   
-    jump Inicio3
-
-
 label prologo:
+
+    show mcM at center
 
     "Algunos nacen sabiendo qué quieren y quién deben ser, otros lo descubren en el camino…"
     "¿Alguna vez te has mirado al espejo y has visto a alguien más?" 
@@ -65,10 +55,15 @@ label prologo:
     "Hay momentos en los que debemos decidir sobre ser fiel a lo que sentimos o ocultarlo un poco más. Debemos ser valientes, los dos caminos son difíciles." 
     "Pero también hay que ser pacientes, hacer las cosas a nuestro tiempo, no importa cuánto nos lleve, no hay respuesta correcta…Crecer es una aventura que debemos recorrer."
 
+    hide mcM
+
     jump cap1
 
 
 label cap1:
+
+    show mc at left
+
     "Llegaste de la escuela, es un día normal." 
     "Hora de ponerse algo más cómodo y aprovechar el tiempo libre." 
     "Hay algo que te ha estado molestando últimamente… Te miras al espejo y sientes esa sensación extraña de nuevo."
@@ -127,6 +122,8 @@ label cap1:
             "(Nace en ti un sentimiento de incertidumbre)"
             $ series = True
 
+    jump cap2
+
 
 label cap2:
     "Han pasado algunos días desde tu investigación" 
@@ -150,7 +147,8 @@ label cap2:
 
 
     "Los días pasan y ves que hay oportunidades para acercarte a hablar sobre el tema" 
-    "pero aun no sabes a quién" "ni siquiera si estás listo para esto" 
+    "pero aun no sabes a quién" 
+    "ni siquiera si estás listo para esto" 
     "Pero aun así te armas de valor y decides que debes hacerlo. "
 
     ch "Si no lo hago ahora, quizá no pueda nunca"
@@ -167,9 +165,16 @@ label cap2:
     "eso hace que le quites importancia"
     "Un día tu profesora de ciencias empieza a hablar sobre sexualidad y en ello comienza a mencionar otras orientaciones sexuales para dar paso a una charla sobre la diversidad."
     
-    "menciona la diferencia sobre sexo y genero, hablando de como la identidad de genero es algo independiente de la orientacion sexual. Con esto comienza a dar ejemplos de personas transgenero importantes para la historia del mundo con mucho respeto y admiración. El darte cuenta que alguien cercano acepta esto te hace sentir un poco más aliviado, te da esperanza de decir algo y que sea bien recibido. Al terminar la clase ves como tus compañeras y compañeros siguen hablando del tema, escuchas algunos comentarios que te molestan un poco, pero decides no decir nada. También escuchas algunas preguntas, te gustaría ser parte de la conversación pero aun no te sientes muy seguro al respecto, aun te da miedo que piensen que eres raro y no puedas defenderte.  Al final dejas que los días pasen"
-    "En tu casa buscas información sobre las personas que menciono tu profesora, te hace feliz saber que gente como tu ha existido desde hace mucho tiempo y que han podido hacer cambios para ayudar a los demás. "
-    "En clases ves como tus compañeras y compañeros siguen hablando al respecto, de a poco vas notando como cada vez hay menos comentarios feos y mas palabras de aceptación, quizá eso sea una señal."
+    "menciona la diferencia sobre sexo y genero, hablando de como la identidad de genero es algo independiente de la orientacion sexual." 
+    "Con esto comienza a dar ejemplos de personas transgenero importantes para la historia del mundo con mucho respeto y admiración." 
+    "El darte cuenta que alguien cercano acepta esto te hace sentir un poco más aliviado, te da esperanza de decir algo y que sea bien recibido." 
+    "Al terminar la clase ves como tus compañeras y compañeros siguen hablando del tema, escuchas algunos comentarios que te molestan un poco, pero decides no decir nada." 
+    "También escuchas algunas preguntas, te gustaría ser parte de la conversación pero aun no te sientes muy seguro al respecto," 
+    "aun te da miedo que piensen que eres raro y no puedas defenderte.  Al final dejas que los días pasen"
+    "En tu casa buscas información sobre las personas que menciono tu profesora" 
+    "te hace feliz saber que gente como tu ha existido desde hace mucho tiempo y que han podido hacer cambios para ayudar a los demás. "
+    "En clases ves como tus compañeras y compañeros siguen hablando al respecto" 
+    "de a poco vas notando como cada vez hay menos comentarios feos y mas palabras de aceptación, quizá eso sea una señal."
     "Llegas a tu casa y te miras en el espejo."
 
     ch "No tengo porque sentirme solo, quiero hablar con alguien de esto."
@@ -188,22 +193,50 @@ label cap2:
 
     ch "Alguien mayor… el hermano de la Bea quizá sepa algo."
 
-    "El hermano mayor de tu mejor amiga, va a la universidad y sabes que se junta con mucha gente muy diferente, de seguro él sabe algo, o conoce a alguien que pueda ayudarte. Debes decidir bien si quieres ayuda."
+    "El hermano mayor de tu mejor amiga, va a la universidad y sabes que se junta con mucha gente muy diferente" 
+    "de seguro él sabe algo" 
+    "o conoce a alguien que pueda ayudarte." 
+    "Debes decidir bien si quieres ayuda."
 
     menu:
         "¿Con quién vas a hablar?"
 
-        if rrss or post:
-            "Hablar con tu mamá.":
-                "hablas con tu mamá te dice que no entiende pero te apoya, te advierte que quizá se vaya con la edad"
+        
+        "Hablar con tu mamá." if rrss or post:
+            "hablas con tu mamá te dice que no entiende pero te apoya, te advierte que quizá se vaya con la edad"
 
-        if rrss or series
-            "Hablar con tu mejor amiga.":
-                "en un principio piensa que estás bromeando, le preocupa que las cosas entre ustedes cambien, pero te apoya de manera incondicional, te pregunta si quieres decirle a su hermano para que te ayude a conseguir cosas que puedan ayudarte"
+        
+        "Hablar con tu mejor amiga." if rrss or series:
+            "en un principio piensa que estás bromeando"
+            "le preocupa que las cosas entre ustedes cambien, pero te apoya de manera incondicional" 
+            "te pregunta si quieres decirle a su hermano para que te ayude a conseguir cosas que puedan ayudarte"
 
-        if post or series:
-            "Hablar con el hermano de tu mejor amiga.":
-                "Te habla de las personas que conoce que son trans, te sientes aceptado y te ayuda a encontrar cosas que puedan ayudarte a sentirte mejor, te incentiva a hablar con su hermana para que no la dejes fuera de las cosas"
+        
+        "Hablar con el hermano de tu mejor amiga." if post or series:
+            "Te habla de las personas que conoce que son trans"
+            "te sientes aceptado y te ayuda a encontrar cosas que puedan ayudarte a sentirte mejor"
+            "te incentiva a hablar con su hermana para que no la dejes fuera de las cosas"
+            if personaje == "1":
+                jump ropatm
+            if personaje == "2":
+                jump ropatn
+            if personaje == "3":
+                jump ropatf
+
+
+label ropatf:
+    jump cap3
+
+label ropatn:
+    jump cap3
+
+label ropatm:
+    jump cap3
+
+
+
+label cap3:
+    pass
 
 
 label Agradecimientos:
