@@ -13,8 +13,22 @@ image mcM = "mc/Prota_espejo.png"
 image pieza = "bg/pieza.png"
 image pc = "bg/pc.png"
 
-image us = "us.png"
+image MamaNeutra = "Mama/MamaNeutra.png"
+image MamaFeliz = "Mama/MamaFeliz.png"
+image MamaPreocupada = "Mama/MamaPreocupada.png"
+image MamaTriste = "Mama/MamaTriste.png"
 
+image AmigaNeutra = "Amiga/AmigaNeutra.png"
+image AmigaFeliz = "Amiga/AmigaFeliz.png"
+image AmigaPreocupada = "Amiga/AmigaPreocupada.png"
+image AmigaTriste = "Amiga/AmigaTriste.png"
+
+image HermanoNeutro = "HermanoAmiga/HermanoNeutro.png"
+image HermanoFeliz = "HermanoAmiga/HermanoFeliz.png"
+image HermanoPreocupado = "HermanoAmiga/HermanoPreocupado.png"
+image HermanoTriste = "HermanoAmiga/HermanoTriste.png"
+
+image us = "us.png"
 
 label start:
     $ personaje = "0"
@@ -213,25 +227,38 @@ label cap2:
     "de seguro él sabe algo" 
     "o conoce a alguien que pueda ayudarte." 
     "Debes decidir bien si quieres ayuda."
+    hide mcM
 
     menu:
         "¿Con quién vas a hablar?"
 
         
         "Hablar con tu mamá." if rrss or post:
-            "hablas con tu mamá te dice que no entiende pero te apoya, te advierte que quizá se vaya con la edad"
-
+            show MamaNeutra
+            "le cuentas que has estado investigando sobre el tema y que te sientes identificado con lo que has leído"
+            hide MamaNeutra
+            show MamaPreocupada
+            "tu mamá te dice que no entiende pero te apoya, te advierte que quizá se vaya con la edad"
+            hide MamaPreocupada
         
         "Hablar con tu mejor amiga." if rrss or series:
+            show AmigaFeliz
             "en un principio piensa que estás bromeando"
+            hide AmigaFeliz
+            show AmigaPreocupada
             "le preocupa que las cosas entre ustedes cambien, pero te apoya de manera incondicional" 
             "te pregunta si quieres decirle a su hermano para que te ayude a conseguir cosas que puedan ayudarte"
+            hide AmigaPreocupada
 
         
         "Hablar con el hermano de tu mejor amiga." if post or series:
+            show HermanoNeutro
             "Te habla de las personas que conoce que son trans"
+            hide HermanoNeutro
+            show HermanoFeliz
             "te sientes aceptado y te ayuda a encontrar cosas que puedan ayudarte a sentirte mejor"
             "te incentiva a hablar con su hermana para que no la dejes fuera de las cosas"
+            hide HermanoFeliz
             if personaje == "1":
                 jump ropatm
             if personaje == "2":
@@ -241,6 +268,13 @@ label cap2:
 
 
 label ropatf:
+    "Te trae ropa para que te pruebes"
+    "te sientes feliz de que alguien te apoye y te ayude a sentirte mejor contigo mismo"
+    #AGREGAR ROPA PARA EL MC
+    "misma*"
+    "tendras que acostumbrarte a eso"
+    "te pruebas la ropa y te ves al espejo, te sientes bien"
+
     jump cap3
 
 label ropatn:
@@ -252,7 +286,7 @@ label ropatm:
 
 
 label cap3:
-    pass
+    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estás listo para decirle a tu familia"
 
 
 label Agradecimientos:
