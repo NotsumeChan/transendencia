@@ -10,6 +10,8 @@ default series = False
 image mc = "mc/Prota.png"
 image mcM = "mc/Prota_espejo.png"
 
+image pieza = "bg/pieza.png"
+image pc = "bg/pc.png"
 
 image us = "us.png"
 
@@ -62,7 +64,9 @@ label prologo:
 
 label cap1:
 
-    show mc at left
+    show pieza:
+        zoom 1.0
+    show mc at center
 
     "Llegaste de la escuela, es un día normal." 
     "Hora de ponerse algo más cómodo y aprovechar el tiempo libre." 
@@ -70,7 +74,13 @@ label cap1:
 
     ch "¿qué es esto? ¿porque lo siento de nuevo?"
 
+    hide mc
+    hide pieza
+
     "Decides al fin hacer algo, vas a tu computadora y decides usar la herramienta mas grande, la internet."
+
+    show pc:
+        zoom 1.0
 
     ch "de seguro aquí debe haber algo…"
 
@@ -122,10 +132,13 @@ label cap1:
             "(Nace en ti un sentimiento de incertidumbre)"
             $ series = True
 
+    hide pc
     jump cap2
 
 
 label cap2:
+
+    show pieza
     "Han pasado algunos días desde tu investigación" 
     "has estado dándole vueltas a las cosas que aprendiste y crees que es momento de compartir tus ideas con alguien" 
     "A pesar de que la idea te asusta el poder sacarte el peso de guardar este secreto es algo alentador" 
@@ -144,13 +157,16 @@ label cap2:
 
     ch "Creo que sera mejor dormir"
     "Duermes para seguir pensando en esto mañana"
+    hide pieza
 
+    
 
     "Los días pasan y ves que hay oportunidades para acercarte a hablar sobre el tema" 
     "pero aun no sabes a quién" 
     "ni siquiera si estás listo para esto" 
     "Pero aun así te armas de valor y decides que debes hacerlo. "
 
+    show mcM at center
     ch "Si no lo hago ahora, quizá no pueda nunca"
 
     "Contemplas la idea de no hacer nada" 
