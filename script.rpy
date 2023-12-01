@@ -1,38 +1,4 @@
-﻿define F = Character("Flan", color= "#8f3be3")
-define N = Character("Notsume", color="#9b47ad")
-define audio.background = "audio/Hopes and Dreams.mp3"
-define ch = Character('[name]', color="#44d0fa")
-
-default rrss = False
-default post = False
-default series = False
-
-image mc = "mc/Prota.png"
-image mcM = "mc/Prota_espejo.png"
-
-image pieza = "bg/pieza.png"
-image pc = "bg/pc.png"
-
-image MamaNeutra = "Mama/MamaNeutra.png"
-image MamaFeliz = "Mama/MamaFeliz.png"
-image MamaPreocupada = "Mama/MamaPreocupada.png"
-image MamaTriste = "Mama/MamaTriste.png"
-
-image AmigaNeutra = "Amiga/AmigaNeutra.png"
-image AmigaFeliz = "Amiga/AmigaFeliz.png"
-image AmigaPreocupada = "Amiga/AmigaPreocupada.png"
-image AmigaTriste = "Amiga/AmigaTriste.png"
-
-image HermanoNeutro = "HermanoAmiga/HermanoNeutro.png"
-image HermanoFeliz = "HermanoAmiga/HermanoFeliz.png"
-image HermanoPreocupado = "HermanoAmiga/HermanoPreocupado.png"
-image HermanoTriste = "HermanoAmiga/HermanoTriste.png"
-
-image us = "us.png"
-
-label start:
-    $ personaje = "0"
-
+﻿label start:
     show mc at center
 
     menu:
@@ -240,7 +206,8 @@ label cap2:
             show MamaPreocupada
             "tu mamá te dice que no entiende pero te apoya, te advierte que quizá se vaya con la edad"
             hide MamaPreocupada
-        
+            jump cap3
+
         "Hablar con tu mejor amiga." if rrss or series:
             show AmigaFeliz
             "en un principio piensa que estás bromeando"
@@ -249,7 +216,7 @@ label cap2:
             "le preocupa que las cosas entre ustedes cambien, pero te apoya de manera incondicional" 
             "te pregunta si quieres decirle a su hermano para que te ayude a conseguir cosas que puedan ayudarte"
             hide AmigaPreocupada
-
+            jump cap3
         
         "Hablar con el hermano de tu mejor amiga." if post or series:
             show HermanoNeutro
@@ -259,6 +226,9 @@ label cap2:
             "te sientes aceptado y te ayuda a encontrar cosas que puedan ayudarte a sentirte mejor"
             "te incentiva a hablar con su hermana para que no la dejes fuera de las cosas"
             hide HermanoFeliz
+
+            "Te trae ropa para que te pruebes"
+
             if personaje == "1":
                 jump ropatm
             if personaje == "2":
@@ -266,27 +236,37 @@ label cap2:
             if personaje == "3":
                 jump ropatf
 
+#AGREGAR ROPA PARA EL MC
 
 label ropatf:
-    "Te trae ropa para que te pruebes"
+    
     "te sientes feliz de que alguien te apoye y te ayude a sentirte mejor contigo mismo"
-    #AGREGAR ROPA PARA EL MC
+    
     "misma*"
     "tendras que acostumbrarte a eso"
     "te pruebas la ropa y te ves al espejo, te sientes bien"
 
+    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estás listo para decirle a tu familia"
+    
     jump cap3
 
 label ropatn:
+
+    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estás listo para decirle a tu familia"
+
     jump cap3
 
 label ropatm:
+
+
+
+    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estás listo para decirle a tu familia"
+
     jump cap3
 
 
-
 label cap3:
-    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estás listo para decirle a tu familia"
+    pass
 
 
 label Agradecimientos:
