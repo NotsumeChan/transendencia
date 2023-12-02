@@ -471,7 +471,7 @@ translate None strings:
 
     # renpy/common/00gui.rpy:451
     old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new "¿Seguro que quieres volver al menú principal?\nSe perderá el progreso no guardado."
+    new "¿Seguro que quieres volver al menu principal?\nSe perderá el progreso no guardado."
 
     # renpy/common/00gui.rpy:452
     old "Are you sure you want to end the replay?"
@@ -495,7 +495,7 @@ translate None strings:
 
     # renpy/common/00gui.rpy:457
     old "Do you trust the device the save was created on? You should only choose yes if you are the device's sole user."
-    new "¿Confías en el dispositivo en el que se creó el archivo de  guardado? Sólo debes elegir sí si eres el único usuario del dispositivo."
+    new "¿Confías en el dispositivo en el que se creó el archivo de  guardado? Sólo debes elegir si si eres el único usuario del dispositivo."
 
     # renpy/common/00keymap.rpy:322
     old "Failed to save screenshot as %s."
@@ -780,7 +780,7 @@ translate None strings:
 
     # renpy/common/00sync.rpy:540
     old "Yes"
-    new "Sí"
+    new "Si"
 
     # renpy/common/00sync.rpy:541
     old "No"
@@ -1372,9 +1372,9 @@ translate None strings:
 
     # renpy/common/00console.rpy:1036
     old "escape: Enables escaping of unicode symbols in unicode strings."
-    new "escape: habilita el escape de símbolos Unicode en cadenas Unicode."
+    new "escape: habilita el escape de simbolos Unicode en cadenas Unicode."
 
     # renpy/common/00console.rpy:1040
     old "unescape: Disables escaping of unicode symbols in unicode strings and print it as is (default)."
-    new "unescape: Desactiva el escape de símbolos Unicode en cadenas Unicode y lo imprime como está (predeterminado)."
+    new "unescape: Desactiva el escape de simbolos Unicode en cadenas Unicode y lo imprime como está (predeterminado)."
 

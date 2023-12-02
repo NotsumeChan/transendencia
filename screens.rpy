@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Inicialización
 ################################################################################
 
@@ -249,7 +249,7 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Atrás") action Rollback()
+            textbutton _("Atras") action Rollback()
             textbutton _("Historial") action ShowMenu('history')
             textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
@@ -308,15 +308,15 @@ screen navigation():
 
             textbutton _("Cargar") action ShowMenu("load")
 
-            textbutton _("Configuración") action ShowMenu("preferences")
+            textbutton _("Configuracion") action ShowMenu("preferences")
 
             if _in_replay:
 
-                textbutton _("Finaliza repetición") action EndReplay(confirm=True)
+                textbutton _("Finaliza repeticion") action EndReplay(confirm=True)
 
             elif not main_menu:
 
-                textbutton _("Menú principal") action MainMenu()
+                textbutton _("Menu principal") action MainMenu()
 
             textbutton _("Info") action ShowMenu("about")
 
@@ -352,15 +352,15 @@ screen navigation():
 
             textbutton _("Cargar") action ShowMenu("load")
 
-            textbutton _("Configuración") action ShowMenu("preferences")
+            textbutton _("Configuracion") action ShowMenu("preferences")
 
             if _in_replay:
 
-                textbutton _("Finaliza repetición") action EndReplay(confirm=True)
+                textbutton _("Finaliza repeticion") action EndReplay(confirm=True)
 
             elif not main_menu:
 
-                textbutton _("Menú principal") action MainMenu()
+                textbutton _("Menu principal") action MainMenu()
 
             textbutton _("Info") action ShowMenu("about")
 
@@ -464,8 +464,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     if main_menu:
         add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+
 
     frame:
         style "game_menu_outer_frame"
@@ -515,6 +514,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     use navigation
 
     textbutton _("Volver"):
+        xpos 0.85
+        ypos 0.94
         style "return_button"
 
         action Return()
@@ -542,7 +543,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background "gui/overlay/t.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -641,7 +642,7 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Página {}"), auto=_("Grabación automática"), quick=_("Grabación rápida"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Pagina {}"), auto=_("Grabación automatica"), quick=_("Grabación rapida"))
 
     use game_menu(title):
 
@@ -684,7 +685,7 @@ screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %d de %B %Y, %H:%M"), empty=_("vacío")):
+                        text FileTime(slot, format=_("{#file_time}%A, %d de %B %Y, %H:%M"), empty=_("vacio")):
                             style "slot_time_text"
 
                         text FileSaveName(slot):
@@ -802,51 +803,57 @@ screen preferences():
             hbox:
                 style_prefix "slider"
                 box_wrap True
+                
+            ## Reservar espacio para la sección de navegación.
+                frame:
+                    style "game_menu_navigation_frame"
 
-                vbox:
+                    vbox:
 
-                    label _("Veloc. texto")
+                        label _("Veloc. texto")
 
-                    bar value Preference("text speed")
+                        bar value Preference("text speed")
 
-                    label _("Veloc. autoavance")
+                        label _("Veloc. autoavance")
 
-                    bar value Preference("auto-forward time")
+                        bar value Preference("auto-forward time")
+                frame:
+                    xpos 0.6
+                    style "game_menu_navigation_frame"
+                    vbox:
 
-                vbox:
+                        if config.has_music:
+                            label _("Volumen musica")
 
-                    if config.has_music:
-                        label _("Volumen música")
+                            hbox:
+                                bar value Preference("music volume")
 
-                        hbox:
-                            bar value Preference("music volume")
+                        if config.has_sound:
 
-                    if config.has_sound:
+                            label _("Volumen sonido")
 
-                        label _("Volumen sonido")
+                            hbox:
+                                bar value Preference("sound volume")
 
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Prueba") action Play("sound", config.sample_sound)
+                                if config.sample_sound:
+                                    textbutton _("Prueba") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Volumen voz")
+                        if config.has_voice:
+                            label _("Volumen voz")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                            hbox:
+                                bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Prueba") action Play("voice", config.sample_voice)
+                                if config.sample_voice:
+                                    textbutton _("Prueba") action Play("voice", config.sample_voice)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
+                        if config.has_music or config.has_sound or config.has_voice:
+                            null height gui.pref_spacing
 
-                        textbutton _("Silenciar todo"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                            textbutton _("Silenciar todo"):
+                                action Preference("all mute", "toggle")
+                                style "mute_all_button"
 
 
 style pref_label is gui_label
@@ -963,7 +970,7 @@ screen history():
                     substitute False
 
         if not _history_list:
-            label _("El historial está vacío.")
+            label _("El historial esta vacio.")
 
 
 ## Esto determina qué etiquetas se permiten en la pantalla de historial.
@@ -1032,7 +1039,7 @@ screen help():
             hbox:
 
                 textbutton _("Teclado") action SetScreenVariable("device", "keyboard")
-                textbutton _("Ratón") action SetScreenVariable("device", "mouse")
+                textbutton _("Raton") action SetScreenVariable("device", "mouse")
 
                 if GamepadExists():
                     textbutton _("Mando") action SetScreenVariable("device", "gamepad")
@@ -1049,11 +1056,11 @@ screen keyboard_help():
 
     hbox:
         label _("Intro")
-        text _("Avanza el diálogo y activa la interfaz.")
+        text _("Avanza el dialogo y activa la interfaz.")
 
     hbox:
         label _("Espacio")
-        text _("Avanza el diálogo sin seleccionar opciones.")
+        text _("Avanza el dialogo sin seleccionar opciones.")
 
     hbox:
         label _("Teclas de flecha")
@@ -1061,23 +1068,23 @@ screen keyboard_help():
 
     hbox:
         label _("Escape")
-        text _("Accede al menú del juego.")
+        text _("Accede al menu del juego.")
 
     hbox:
         label _("Ctrl")
-        text _("Salta el diálogo mientras se presiona.")
+        text _("Salta el dialogo mientras se presiona.")
 
     hbox:
         label _("Tabulador")
-        text _("Activa/desactiva el salto de diálogo.")
+        text _("Activa/desactiva el salto de dialogo.")
 
     hbox:
-        label _("Av. pág.")
-        text _("Retrocede al diálogo anterior.")
+        label _("Av. pag.")
+        text _("Retrocede al dialogo anterior.")
 
     hbox:
-        label _("Re. pág.")
-        text _("Avanza hacia el diálogo siguiente.")
+        label _("Re. pag.")
+        text _("Avanza hacia el dialogo siguiente.")
 
     hbox:
         label "H"
@@ -1089,18 +1096,18 @@ screen keyboard_help():
 
     hbox:
         label "V"
-        text _("Activa/desactiva la asistencia por {a=https://www.renpy.org/l/voicing}voz-automática{/a}.")
+        text _("Activa/desactiva la asistencia por {a=https://www.renpy.org/l/voicing}voz-automatica{/a}.")
 
     hbox:
         label "Shift+A"
-        text _("Abre el menú de accesibilidad.")
+        text _("Abre el menu de accesibilidad.")
 
 
 screen mouse_help():
 
     hbox:
         label _("Clic izquierdo")
-        text _("Avanza el diálogo y activa la interfaz.")
+        text _("Avanza el dialogo y activa la interfaz.")
 
     hbox:
         label _("Clic medio")
@@ -1108,30 +1115,30 @@ screen mouse_help():
 
     hbox:
         label _("Clic derecho")
-        text _("Accede al menú del juego.")
+        text _("Accede al menu del juego.")
 
     hbox:
-        label _("Rueda del ratón arriba\nClic en lado de retroceso")
-        text _("Retrocede al diálogo anterior.")
+        label _("Rueda del raton arriba\nClic en lado de retroceso")
+        text _("Retrocede al dialogo anterior.")
 
     hbox:
-        label _("Rueda del ratón abajo")
-        text _("Avanza hacia el diálogo siguiente.")
+        label _("Rueda del raton abajo")
+        text _("Avanza hacia el dialogo siguiente.")
 
 
 screen gamepad_help():
 
     hbox:
-        label _("Gatillo derecho\nA/Botón inferior")
-        text _("Avanza el diálogo y activa la interfaz.")
+        label _("Gatillo derecho\nA/Boton inferior")
+        text _("Avanza el dialogo y activa la interfaz.")
 
     hbox:
-        label _("Gatillo izquierdo\nBotón sup. frontal izq.")
-        text _("Retrocede al diálogo anterior.")
+        label _("Gatillo izquierdo\nBoton sup. frontal izq.")
+        text _("Retrocede al dialogo anterior.")
 
     hbox:
-        label _("Botón sup. frontal der.")
-        text _("Avanza hacia el diálogo siguiente.")
+        label _("Boton sup. frontal der.")
+        text _("Avanza hacia el dialogo siguiente.")
 
 
     hbox:
@@ -1139,11 +1146,11 @@ screen gamepad_help():
         text _("Navega la interfaz.")
 
     hbox:
-        label _("Comenzar, Guía")
-        text _("Accede al menú del juego.")
+        label _("Comenzar, Guia")
+        text _("Accede al menu del juego.")
 
     hbox:
-        label _("Y/Botón superior")
+        label _("Y/Boton superior")
         text _("Oculta la interfaz.")
 
     textbutton _("Calibrar") action GamepadCalibrate()
@@ -1212,7 +1219,7 @@ screen confirm(message, yes_action, no_action):
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Sí") action yes_action
+                textbutton _("Si") action yes_action
                 textbutton _("No") action no_action
 
     ## Clic derecho o escape responden "no".
@@ -1568,10 +1575,10 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Atrás") action Rollback()
+            textbutton _("Atras") action Rollback()
             textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menú") action ShowMenu()
+            textbutton _("Menu") action ShowMenu()
 
 
 style window:
@@ -1592,11 +1599,11 @@ style nvl_window:
 
 style main_menu_frame:
     variant "small"
-    background "gui/phone/overlay/main_menu.png"
+    background "gui/phone/overlay/t.png"
 
 style game_menu_outer_frame:
     variant "small"
-    background "gui/phone/overlay/game_menu.png"
+    background "gui/phone/overlay/t.png"
 
 style game_menu_navigation_frame:
     variant "small"

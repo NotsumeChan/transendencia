@@ -57,13 +57,13 @@ define gui.interface_text_color = '#ffffff'
 ## Tipos y tamaños de letra ####################################################
 
 ## El tipo de letra del texto del juego
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/Cakecafe.ttf"
 
 ## El tipo de letra de los nombres de personajes
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "fonts/Cakecafe.ttf"
 
 ## El tipo de letra del texto externo al juego.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/Cakecafe.ttf"
 
 ## El tamaño normal del texto del diálogo.
 define gui.text_size = 33
@@ -88,7 +88,7 @@ define gui.title_text_size = 75
 
 ## Imágenes del menú principal y menús del juego.
 define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.game_menu_background = "gui/overlay/t.png"
 
 
 ## Diálogo #####################################################################
