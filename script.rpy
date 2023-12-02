@@ -46,7 +46,7 @@ label prologo:
 label cap1:
 
     show pieza:
-        zoom 0.65
+        zoom 1
     show mc at center
 
     "Llegaste de la escuela, es un dia normal." 
@@ -121,7 +121,7 @@ label cap1:
 label cap2:
 
     show pieza:
-        zoom 0.65
+        zoom 1
     "Han pasado algunos dias desde tu investigacion" 
     "has estado dandole vueltas a las cosas que aprendiste y crees que es momento de compartir tus ideas con alguien" 
     "A pesar de que la idea te asusta el poder sacarte el peso de guardar este secreto es algo alentador" 
@@ -161,7 +161,7 @@ label cap2:
     hide mcM
 
     show colegio:
-        zoom 0.3
+        zoom 1
     "Sigues tu vida como siempre intentando no pensar mucho al respecto" 
     "el sentimiento no se ha pasado pero te sigues repitiendo que va a hacerlo" 
     "eso hace que le quites importancia"
@@ -176,9 +176,9 @@ label cap2:
     hide colegio
 
     show plaza:
-        zoom 0.3
+        zoom 1
     "Al final dejas que los dias pasen"
-    hide Plaza
+    hide plaza
 
     show pc
     "En tu casa buscas informacion sobre las personas que menciono tu profesora" 
@@ -186,7 +186,7 @@ label cap2:
     hide pc
 
     show colegio:
-        zoom 0.3
+        zoom 1
     "En clases ves como tus compaÑeras y compaÑeros siguen hablando al respecto" 
     "de a poco vas notando como cada vez hay menos comentarios feos y mas palabras de aceptacion, quiza eso sea una seÑal."
     hide colegio
