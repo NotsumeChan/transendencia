@@ -642,7 +642,7 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Pagina {}"), auto=_("Grabación automatica"), quick=_("Grabación rapida"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Pagina {}"), auto=_("Grabacion automatica"), quick=_("Grabacion rapida"))
 
     use game_menu(title):
 
@@ -694,7 +694,7 @@ screen file_slots(title):
                         key "save_delete" action FileDelete(slot)
 
             ## Botones de acceso a otras páginas
-            vbox:
+            hbox:
                 style_prefix "page"
 
                 xalign 0.5

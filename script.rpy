@@ -18,6 +18,7 @@
     python:
         name = ""
         name = renpy.input("¿Cual es tu nombre?", length=15, multiline = False)
+        name = name.replace("ñ", "Ñ")
         name = name.strip()
 
         if not name:
@@ -50,7 +51,7 @@ label cap1:
 
     "Llegaste de la escuela, es un dia normal." 
     "Hora de ponerse algo mas comodo y aprovechar el tiempo libre." 
-    "Hay algo que te ha estado molestando ultimamente… Te miras al espejo y sientes esa sensacion extraña de nuevo."
+    "Hay algo que te ha estado molestando ultimamente… Te miras al espejo y sientes esa sensacion extraÑa de nuevo."
 
     hide pieza
     hide mc
@@ -84,16 +85,16 @@ label cap1:
             "Algunos comparten consejos sobre como lidiar con algo llamado “disforia”" 
             "como abordar estos sentimientos" 
             "parece que eso es lo que estas buscando" 
-            "A pesar de tener problemas con el idioma, te sientes extrañamente parte de esta comunidad virtual, eso te alegra" 
+            "A pesar de tener problemas con el idioma, te sientes extraÑamente parte de esta comunidad virtual, eso te alegra" 
             "Decides seguir algunos perfiles y guardar algunas publicaciones que llamaron mas tu atencion."
             $ rrss = True
             
         "Buscar post de organizaciones al respecto.":
             "Escribes la palabra “Transgenero” en el buscador, logras encontrar entre los resultados algunas organizaciones que pertenecen a Chile"
-            "echas un vistazo y encuentras un monton de informacion sobre las campañas que llevan a cabo." 
+            "echas un vistazo y encuentras un monton de informacion sobre las campaÑas que llevan a cabo." 
             "Intentas mirar todas las secciones para encontrar algo que te sirva y te topas con un monton de investigaciones y escritos profesionales sobre distintos temas." 
             "Se ven complicados pero aun asi revisas unos cuantos."
-            "Mientras revisas las paginas, descubres que hay grupos de apoyo presenciales y en linea donde las personas comparten sus experiencias. Algunas de estas campañas se ven utiles para tu situacion, ademas tambien notas algunas dirigidas a la familia" 
+            "Mientras revisas las paginas, descubres que hay grupos de apoyo presenciales y en linea donde las personas comparten sus experiencias. Algunas de estas campaÑas se ven utiles para tu situacion, ademas tambien notas algunas dirigidas a la familia" 
             "¿Podrias invitar a tus papas a una reunion?" 
             "quiza cuando te armes de valor para decirles podrias intentarlo." 
             "Aparte de eso solo te topas con escritos profesionales que hablan sobre la identidad de genero escritos por personas desde lo educacional y la psicologia" 
@@ -141,7 +142,7 @@ label cap2:
 
     hide pieza
 
-    "Duermes para seguir pensando en esto mañana"
+    "Duermes para seguir pensando en esto maÑana"
 
 
     "Los dias pasan y ves que hay oportunidades para acercarte a hablar sobre el tema" 
@@ -169,7 +170,7 @@ label cap2:
     "menciona la diferencia sobre sexo y genero, hablando de como la identidad de genero es algo independiente de la orientacion sexual." 
     "Con esto comienza a dar ejemplos de personas transgenero importantes para la historia del mundo con mucho respeto y admiracion." 
     "El darte cuenta que alguien cercano acepta esto te hace sentir un poco mas aliviado, te da esperanza de decir algo y que sea bien recibido." 
-    "Al terminar la clase ves como tus compañeras y compañeros siguen hablando del tema, escuchas algunos comentarios que te molestan un poco, pero decides no decir nada." 
+    "Al terminar la clase ves como tus compaÑeras y compaÑeros siguen hablando del tema, escuchas algunos comentarios que te molestan un poco, pero decides no decir nada." 
     "Tambien escuchas algunas preguntas, te gustaria ser parte de la conversacion pero aun no te sientes muy seguro al respecto," 
     "aun te da miedo que piensen que eres raro y no puedas defenderte." 
     hide colegio
@@ -186,8 +187,8 @@ label cap2:
 
     show colegio:
         zoom 0.3
-    "En clases ves como tus compañeras y compañeros siguen hablando al respecto" 
-    "de a poco vas notando como cada vez hay menos comentarios feos y mas palabras de aceptacion, quiza eso sea una señal."
+    "En clases ves como tus compaÑeras y compaÑeros siguen hablando al respecto" 
+    "de a poco vas notando como cada vez hay menos comentarios feos y mas palabras de aceptacion, quiza eso sea una seÑal."
     hide colegio
 
     show mcM
@@ -203,7 +204,7 @@ label cap2:
 
     ch " hmmm…¿quiza la Bea?"
 
-    "Ha sido tu amiga desde que eran chicos, es tu compañera de puesto en la escuela y con quien mas confianza tienes, siempre se cuentan todo, no es una mala idea."
+    "Ha sido tu amiga desde que eran chicos, es tu compaÑera de puesto en la escuela y con quien mas confianza tienes, siempre se cuentan todo, no es una mala idea."
 
     ch "tal vez alguien que pueda saber del tema…"
 

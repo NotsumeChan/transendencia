@@ -14,7 +14,7 @@ image mcM = "mc/Prota_espejo.png"
 
 image pieza = "bg/pieza.png"
 image pc = "bg/pc.png"
-image plaza = "bg/Plaza.jpg"
+image plaza = "bg/Plaza.png"
 image colegio = "bg/Sala_de_clases.jpg"
 
 image MamaNeutra = "Mama/MamaNeutra.png"

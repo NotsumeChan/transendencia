@@ -311,11 +311,11 @@ translate None strings:
 
     # renpy/common/00action_file.rpy:655
     old "Automatic saves"
-    new "Grabación automática"
+    new "Grabacion automatica"
 
     # renpy/common/00action_file.rpy:655
     old "Quick saves"
-    new "Grabación rápida"
+    new "Grabacion rapida"
 
     # renpy/common/00action_file.rpy:796
     old "Next file page."
@@ -427,11 +427,11 @@ translate None strings:
 
     # renpy/common/00director.rpy:1768
     old "Click to set transform, right click to add to transform list."
-    new "Clic para establecer la transformación, clic derecho para añadir a la lista de transformaciones."
+    new "Clic para establecer la transformacion, clic derecho para añadir a la lista de transformaciones."
 
     # renpy/common/00director.rpy:1780
     old "Behind:"
-    new "Detrás:"
+    new "Detras:"
 
     # renpy/common/00director.rpy:1789
     old "Click to set, right click to add to behind list."
@@ -463,7 +463,7 @@ translate None strings:
 
     # renpy/common/00gui.rpy:449
     old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
-    new "Al cargar se perderá el progreso no guardado.\n¿Seguro que quieres hacer esto?"
+    new "Al cargar se perdera el progreso no guardado.\n¿Seguro que quieres hacer esto?"
 
     # renpy/common/00gui.rpy:450
     old "Are you sure you want to quit?"
@@ -471,11 +471,11 @@ translate None strings:
 
     # renpy/common/00gui.rpy:451
     old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new "¿Seguro que quieres volver al menu principal?\nSe perderá el progreso no guardado."
+    new "¿Seguro que quieres volver al menu principal?\nSe perdera el progreso no guardado."
 
     # renpy/common/00gui.rpy:452
     old "Are you sure you want to end the replay?"
-    new "¿Seguro que quieres finalizar la repetición?"
+    new "¿Seguro que quieres finalizar la repeticion?"
 
     # renpy/common/00gui.rpy:453
     old "Are you sure you want to begin skipping?"
@@ -483,19 +483,19 @@ translate None strings:
 
     # renpy/common/00gui.rpy:454
     old "Are you sure you want to skip to the next choice?"
-    new "¿Seguro que quieres saltar hasta la próxima elección?"
+    new "¿Seguro que quieres saltar hasta la proxima eleccion?"
 
     # renpy/common/00gui.rpy:455
     old "Are you sure you want to skip unseen dialogue to the next choice?"
-    new "¿Seguro que quieres saltar el texto no visto hasta la próxima elección?"
+    new "¿Seguro que quieres saltar el texto no visto hasta la próxima eleccion?"
 
     # renpy/common/00gui.rpy:456
     old "This save was created on a different device. Maliciously constructed save files can harm your computer. Do you trust this save's creator and everyone who could have changed the file?"
-    new "Este archivo se creó en otro dispositivo. Los archivos de guardado maliciosamente creados pueden dañar tu computadora. Confías en el creador de este archivo y en todos los que podrían haberlo modificado?"
+    new "Este archivo se creó en otro dispositivo. Los archivos de guardado maliciosamente creados pueden dañar tu computadora. Confias en el creador de este archivo y en todos los que podrian haberlo modificado?"
 
     # renpy/common/00gui.rpy:457
     old "Do you trust the device the save was created on? You should only choose yes if you are the device's sole user."
-    new "¿Confías en el dispositivo en el que se creó el archivo de  guardado? Sólo debes elegir si si eres el único usuario del dispositivo."
+    new "¿Confias en el dispositivo en el que se creo el archivo de  guardado? Solo debes elegir si si eres el unico usuario del dispositivo."
 
     # renpy/common/00keymap.rpy:322
     old "Failed to save screenshot as %s."
@@ -512,7 +512,7 @@ translate None strings:
     # renpy/common/00library.rpy:353
     #about_label_text
     old "This program contains free software under a number of licenses, including the MIT License and GNU Lesser General Public License. A complete list of software, including links to full source code, can be found {a=https://www.renpy.org/l/license}here{/a}."
-    new "Este programa contiene {i}software{/i} libre sujeto a diversas licencias, incluidas la licencia MIT y la {i}GNU Lesser General Public License{/i} (Licencia Pública General Reducida de GNU). Puedes encontrar la lista completa de {i}software{/i}, con enlaces al código fuente completo, {a=https://www.renpy.org/l/license}aquí (en inglés){/a}."
+    new "Este programa contiene {i}software{/i} libre sujeto a diversas licencias, incluidas la licencia MIT y la {i}GNU Lesser General Public License{/i} (Licencia Publica General Reducida de GNU). Puedes encontrar la lista completa de {i}software{/i}, con enlaces al código fuente completo, {a=https://www.renpy.org/l/license}aqui (en inglés){/a}."
 
     # renpy/common/00preferences.rpy:271
     old "display"
@@ -532,7 +532,7 @@ translate None strings:
 
     # renpy/common/00preferences.rpy:303
     old "show empty window"
-    new "mostrar ventana vacía"
+    new "mostrar ventana vacia"
 
     # renpy/common/00preferences.rpy:312
     old "text speed"
@@ -584,11 +584,11 @@ translate None strings:
 
     # renpy/common/00preferences.rpy:374
     old "auto-forward after click"
-    new "autoavanzar después del clic"
+    new "autoavanzar despues del clic"
 
     # renpy/common/00preferences.rpy:383
     old "automatic move"
-    new "movimiento automático"
+    new "movimiento automatico"
 
     # renpy/common/00preferences.rpy:392
     old "wait for voice"
@@ -604,7 +604,7 @@ translate None strings:
 
     # renpy/common/00preferences.rpy:419
     old "self voicing volume drop"
-    new "Caída de volumen de voz automática"
+    new "Caida de volumen de voz automatica"
 
     # renpy/common/00preferences.rpy:427
     old "clipboard voicing"
@@ -624,7 +624,7 @@ translate None strings:
 
     # renpy/common/00preferences.rpy:464
     old "gl powersave"
-    new "gl ahorro de energía"
+    new "gl ahorro de energia"
 
     # renpy/common/00preferences.rpy:470
     old "gl framerate"
@@ -636,7 +636,7 @@ translate None strings:
 
     # renpy/common/00preferences.rpy:476
     old "font transform"
-    new "transformación de fuente"
+    new "transformacion de fuente"
 
     # renpy/common/00preferences.rpy:479
     old "font size"
