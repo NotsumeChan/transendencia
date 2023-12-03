@@ -7,15 +7,21 @@
 
         "Trans-Masculino":
             $ personaje = "1"
+            $ genero = "niÑa"
 
         "No-Binario":
             $ personaje = "2"
+                
 
         "Trans-Femenina":
             $ personaje = "3"
+            $ genero = "niÑo"
             
 
     python:
+        from random import randint
+        genero = "niÑo" if randint(0,1) else "niÑa"
+        pronombre = genero[-1]
         name = ""
         name = renpy.input("¿Cual es tu nombre?", length=15, multiline = False)
         name = name.replace("ñ", "Ñ")
@@ -175,10 +181,7 @@ label cap2:
     "aun te da miedo que piensen que eres raro y no puedas defenderte." 
     hide colegio
 
-    show plaza:
-        zoom 1
     "Al final dejas que los dias pasen"
-    hide plaza
 
     show pc
     "En tu casa buscas informacion sobre las personas que menciono tu profesora" 
@@ -221,72 +224,209 @@ label cap2:
 
         
         "Hablar con tu mama." if rrss or post:
-            show MamaNeutra
-            "le cuentas que has estado investigando sobre el tema y que te sientes identificado con lo que has leido"
-            hide MamaNeutra
-            show MamaPreocupada
-            "tu mama te dice que no entiende pero te apoya, te advierte que quiza se vaya con la edad"
-            hide MamaPreocupada
+            "Decides hablar con tu mama" 
+            "asi que te acercas a ella cuando llegas de clases" 
+            "la guias a tu pieza para poder hablar con ella mas tranquilamente."
+
+            show pieza
+            show Mama Neutra at right
+            show mc Hablando at left
+
+            ch "Mama, ¿podemos hablar?"
+
+            mama "Claro, cariÑo! ¿Que sucede?"
+
+            ch "Es solo que... ultimamente me siento incomod[pronombre], como si algo estuviera mal."
+
+            mama @ Preocupada "¿Mal? ¿Como asi mi amor?"
+
+            ch "No se como decirlo exactamente, pero... a veces no me siento yo mism[pronombre]."
+            ch "Como si mi cuerpo no concordara con lo que siento por dentro."
+            ch "Como si no fuera totalmente un [genero]"
+
+            mama @ Preocupada "No se si te entiendo mi amor ¿Esto es de ahora o de hace tiempo?"
+
+            ch "Creo que es algo con mi género mamá, no sé bien como explicártelo… eso si, viene desde hace tiempo."
+
+            mama "Quiero que sepas que te apoyo, aunque no entiendo mucho, quiza es algo de la edad y se va a pasar con el tiempo."
+
+            ch "¿De verdad? Me da miedo que no lo entiendas."
+
+            mama @ Feliz "No te preocupes, amor. Estoy aquí para ti y tu mama siempre te va a apoyar."
+
+            ch "¿Crees que es muy raro?"
+
+            mama  "La verdad, no se, no entiendo bien como se siente eso." 
+            mama @ Feliz "Pero aqui estamos y te voy a querer siempre."
+            mama  "Aparte como te dije, quiza es algo que se te pase despues, no hay que preocuparnos mucho."
+            
+            ch "Gracias, mama. Me siento mejor sabiendo que te tengo a mi lado."
+
+            mama "Siempre, cariÑo."
+            
+            "No estas sol[pronombre] en esto."
+
+            hide pieza
+            hide Mama
+            hide mc
+
             jump cap3
 
         "Hablar con tu mejor amiga." if rrss or series:
-            show AmigaFeliz
-            "en un principio piensa que estas bromeando"
-            hide AmigaFeliz
-            show AmigaPreocupada
-            "le preocupa que las cosas entre ustedes cambien, pero te apoya de manera incondicional" 
-            "te pregunta si quieres decirle a su hermano para que te ayude a conseguir cosas que puedan ayudarte"
-            hide AmigaPreocupada
+            "Decides que lo mejor será hablarlo con tu mejor amiga, al menos para poder sacarlo de tu pecho un poco." 
+            "Vas a clases y esperas a que sea el momento perfecto para hablar sobre el tema, pero sabes que si sigues esperando no vas a lograr nada"
+            "asi que te armas de valor para hablarlo en este recreo, aqui mismo en la sala."
+           
+            show colegio
+            show Amiga Neutra at right
+            show mc Hablando at left
+
+            ch "Oye hay algo que quiero hablar contigo."
+
+            Amiga @ Feliz "¿Que paso? ¿Me vas a decir que te gusta alguien?"
+
+            ch "No, esto es serio, de verdad quiero hablar contigo."
+
+            Amiga @ Preocupada "uhhhh…. ¿Estas bien? ¿Te paso algo en la casa?"
+
+            ch "No, no es eso… ¿Te acuerdas lo que hemos visto en  ciencias? "
+
+            Amiga @ Preocupada "Si… ¿Pasa algo con eso?"
+
+            ch "Ya….. ¿Que pasaria si yo no fuera un niño? "
+
+            Amiga "¿Como? uhmmm osea, no se, no seria muy diferente que ahora ¿no?"
+
+            Amiga @ Preocupada "¿Porque estamos hablando de eso?" 
+
+            ch "Es que… a ver ¿Como te digo? "
+
+            ch "Hace ya harto tiempo me siento raro… como si hubiera algo mal en mi, algo con mi cuerpo."
+
+            Amiga "¿Ya? ¿Es como lo que dijo la profe? ¿El tema del genero?"
+
+            ch "Si… eso mismo. "
+
+            ch "Bea creo que soy transgenero… he estado viendo cosas sobre eso y pienso que si lo soy…" 
+            ch "ahora ultimo me siento incomod[pronombre] con como me veo… no me quiero ver asi."
+
+            Amiga "Uhm………. "
+
+            Amiga @ Triste "Entonces … ¿Eso cambia algo con nosotros?"
+
+            "Notas que tu amiga esta preocupada, mas bien triste, asi que la abrazas para que se sienta mejor."
+
+            ch "Obvio que no tonta. Tu sigues siendo mi mejor amiga."
+            python:
+                if genero == "niÑo":
+                    a = "a"
+                else:
+                    a = "o"
+            Amiga @ Triste "Tu tambien eres mi mejor amig[pronombre]… amig[a]. Perdon."
+
+            "Ambos hablan un rato sobre como te has sentido ultimamente, te alegra bastante el poder hablar al respecto finalmente, y saber que tu mejor amiga sigue ahi lo hace mucho mejor."
+            "Llega la hora de la salida y acompañas a tu amiga a la plaza a esperar a su hermano. Mientras esperan ves como a Bea se le ocurre una idea."
+
+            hide colegio
+            hide Amiga
+            hide mc
+
+            show plaza
+            show Amiga Neutra at right
+            show Hermano Neutro at center
+            show mc Hablando at left
+
+            Amiga @ Feliz "Oye ¿Y si le decimos a mi hermano?"
+
+            ch "¿Decirle que cosa?"
+
+            Amiga "Ahh Tu sabes poh. Lo de tu genero. "
+
+            ch "Uhm no se… ¿Serviria de algo?"
+
+            Amiga @ Feliz "Obvio el Mati tiene un monton de amigos en la U, demas conoce a alguien que sepa mas de esto y pueda ayudarte."
+
+            "Lo piensas un poco. Finalmente crees que si es una buena idea si alguien sabe algo, probablemente sea el. Asi que decides pedirle ayuda cuando llegue."
+
+            Mati @ Feliz "hola cabra chica."
+
+            Amiga @ Preocupada "Hola Mati, oye [name] quiere decirte algo."
+
+            hide Amiga
+            hide mc
+
+            "Hablas con el y accede a ayudarte."
+            "Te cuenta sobre su amiga de la universidad que esta “transicionando” no sabes bien que significa eso, pero estas feliz de poder recibir ayuda de alguien."
+            "Te alegra porder habertelo sacado del pecho y poder haber encontrado a alguien que sepa mas de esto"
+            hide plaza
+            hide Hermano 
+            "te sientes apoyad[pronombre]"
+            "No estas sol[pronombre] en esto."
             jump cap3
         
         "Hablar con el hermano de tu mejor amiga." if post or series:
-            show HermanoNeutro
-            "Te habla de las personas que conoce que son trans"
-            hide HermanoNeutro
-            show HermanoFeliz
-            "te sientes aceptado y te ayuda a encontrar cosas que puedan ayudarte a sentirte mejor"
-            "te incentiva a hablar con su hermana para que no la dejes fuera de las cosas"
-            hide HermanoFeliz
+            "Decides que lo mejor es hablar con el hermano de tu mejor amiga, el probablemente sepa algo o de alguien que pueda ayudarte." 
+            show colegio
+            "Vas a la escuela decidido a hacer esto bien." 
+            "Esperas a que terminen las clases para acompañar a Bea a esperar a su hermano en la plaza." 
+            hide colegio
 
-            "Te trae ropa para que te pruebes"
+            "Una vez que llega te armas de valor para decirle algo."
+            show plaza
 
-            if personaje == "1":
-                jump ropatm
-            if personaje == "2":
-                jump ropatn
-            if personaje == "3":
-                jump ropatf
+            show mc Hablando at left
+            show Hermano Neutro at left
 
-#AGREGAR ROPA PARA EL MC
+            ch "Hola Mati. ¿Puedo hablar contigo?"
 
-label ropatf:
-    
-    "te sientes feliz de que alguien te apoye y te ayude a sentirte mejor contigo mismo"
-    
-    "misma*"
-    "tendras que acostumbrarte a eso"
-    "te pruebas la ropa y te ves al espejo, te sientes bien"
+            Mati "Claro, [name] ¿Qué pasa?"
 
-    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estas listo para decirle a tu familia"
-    
-    jump cap3
+            ch "Es solo que... siento que tu puedes saber mas de esto… bueno, ultimamente me siento un poco confundid[pronombre]. Como si mi cuerpo no coincidiera con lo que siento por dentro."
 
-label ropatn:
+            Mati @ Preocupado "Entiendo… ¿Has escuchado hablar de personas trans?"
 
-    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estas listo para decirle a tu familia"
+            ch "Sí, un poco, pero no entiendo mucho. Aunque creo que soy eso." #soy ese
 
-    jump cap3
+            Mati "Bueno, esta bien sentirse confundid[pronombre]. Conozco a algunas personas trans y han pasado por cosas parecidas, no es tan raro."
 
-label ropatm:
+            ch "¿En serio? No sabía que conocias a alguien asi."
+
+            Mati "Si, tengo una amiga en la universidad que es trans. Ha pasado por un proceso para vivir de acuerdo con su identidad de genero. Cada persona tiene su propio camino."
+
+            ch "¿Como puedo saber mas? de verdad quiero ayuda."
+
+            Mati "Hay muchas formas. Podemos buscar informacion o… puedo hablar yo con mi amiga para que te ayude un poco. "
+
+            ch "¡¿De verdad?! oh muchas gracias Mati. Sabia que ibas a ayudarme."
+
+            Mati @ Preocupado "¿Le has dicho a alguien mas? A la Bea por ejemplo."
+
+            ch "No, no quiero dejarla fuera, pero me da un poco de miedo."
+
+            Mati "Entiendo, pero a veces compartir esto es mejor. No creo que se lo tome mal, deberias decirle."
+
+            ch "Gracias, voy a hablar con ella pronto… "
+
+            Mati @ Feliz "Ah tranquilo, tu anda de a poco. "
 
 
-
-    "Te sientes feliz de haber hablado con alguien, pero aun no sabes si estas listo para decirle a tu familia"
-
-    jump cap3
+            hide plaza
+            hide mc
+            hide Hermano
+            "El te ofrece ayuda a encontrar cosas y ropa que puedan ayudarte con tu “disforia”, como el llamo al sentimiento ese." 
+            "Le agradeces profundamente y decides que debes hablar con su hermana ahora." 
+            "Mientras aun estan en la plaza le dices un poco." 
+            "Te sorprende lo comprensiva que se muestra con la noticia. "
+            "Estas feliz, tienes ayuda y compañia." 
+            "No estas sol[pronombre] en esto."
+            jump cap3
 
 
 label cap3:
+    "Tras confiar a su circulo cercano sobre su identidad transgenero, [name] decide explorar la transicion legal, médica y social en Chile." 
+    "Explica los procesos legales para cambiar su nombre y genero en documentos" 
+    "considera opciones medicas como la terapia hormonal y planea como comunicar su identidad a las personas en su vida." 
+    "Con el respaldo de sus amigos, [name] se siente mas seguro al tomar estos pasos significativos en su viaje de autenticidad y autodescubrimiento."
     pass
 
 
