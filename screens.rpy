@@ -398,7 +398,12 @@ screen main_menu():
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
 
+
     add gui.main_menu_background
+    add "titulo.png":
+        xalign 0.5
+        yalign 0.3
+        zoom 2.5
 
     ## Este marco vacío oscurece el menu principal.
     frame:
