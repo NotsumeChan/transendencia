@@ -30,7 +30,7 @@ define config.version = "0.1"
 ## Texto situado en la pantalla 'Acerca de' del juego. Sitúa el texto entre
 ## comillas triples y deja una línea en blanco entre párrafos.
 
-define gui.about = _p("")
+define gui.about = "Transendencia es una novela visual centrada en la experiencia transgenero en la vida de un preadolescente.\nRecorre desde la realizacion hasta los pasos a seguir para realizar procesos legales y medicos. \nAprendiendo a como manejar el entimiento de disforia durante su experiencia.\n\n'Se quien eres y di lo que sientes, porque a aquellos a quienes les molesta no importan, y a quienes les importas no les molesta' Dr Seuss"
 
 
 ## Nombre breve del juego para ejecutables y directorios en la distribución.
@@ -44,7 +44,7 @@ define build.name = "Transcendencia"
 ## Estas tres variables controlan, entre otras cosas, qué mezcladores se
 ## muestran al reproductor de forma predeterminada. Establecer uno de estos en
 ## False ocultará el mezclador apropiado. 
-
+define config.main_menu_music = "audio/FORG.wav"
 define config.has_sound = True
 define config.has_music = True
 define config.has_voice = True

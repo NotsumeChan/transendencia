@@ -2,6 +2,7 @@
     show mc at center
 
     menu:
+        # stop "audio/FORG.wav"
         "con que personaje quieres comenzar la historia?"
 
 
@@ -56,7 +57,7 @@ label cap1:
     show mc at center
 
     "Llegaste de la escuela, es un dia normal." 
-    "Hora de ponerse algo mas comodo y aprovechar el tiempo libre." 
+    "Hora de ponerse algo mas comod[pronombre] y aprovechar el tiempo libre." 
     "Hay algo que te ha estado molestando ultimamente… Te miras al espejo y sientes esa sensacion extraÑa de nuevo."
 
     hide pieza
@@ -100,7 +101,8 @@ label cap1:
             "echas un vistazo y encuentras un monton de informacion sobre las campaÑas que llevan a cabo." 
             "Intentas mirar todas las secciones para encontrar algo que te sirva y te topas con un monton de investigaciones y escritos profesionales sobre distintos temas." 
             "Se ven complicados pero aun asi revisas unos cuantos."
-            "Mientras revisas las paginas, descubres que hay grupos de apoyo presenciales y en linea donde las personas comparten sus experiencias. Algunas de estas campaÑas se ven utiles para tu situacion, ademas tambien notas algunas dirigidas a la familia" 
+            "Mientras revisas las paginas, descubres que hay grupos de apoyo presenciales y en linea donde las personas comparten sus experiencias." 
+            "Algunas de estas campaÑas se ven utiles para tu situacion, ademas tambien notas algunas dirigidas a la familia" 
             "¿Podrias invitar a tus papas a una reunion?" 
             "quiza cuando te armes de valor para decirles podrias intentarlo." 
             "Aparte de eso solo te topas con escritos profesionales que hablan sobre la identidad de genero escritos por personas desde lo educacional y la psicologia" 
@@ -175,10 +177,10 @@ label cap2:
     
     "menciona la diferencia sobre sexo y genero, hablando de como la identidad de genero es algo independiente de la orientacion sexual." 
     "Con esto comienza a dar ejemplos de personas transgenero importantes para la historia del mundo con mucho respeto y admiracion." 
-    "El darte cuenta que alguien cercano acepta esto te hace sentir un poco mas aliviado, te da esperanza de decir algo y que sea bien recibido." 
+    "El darte cuenta que alguien cercano acepta esto te hace sentir un poco mas aliviad[pronombre], te da esperanza de decir algo y que sea bien recibido." 
     "Al terminar la clase ves como tus compaÑeras y compaÑeros siguen hablando del tema, escuchas algunos comentarios que te molestan un poco, pero decides no decir nada." 
     "Tambien escuchas algunas preguntas, te gustaria ser parte de la conversacion pero aun no te sientes muy seguro al respecto," 
-    "aun te da miedo que piensen que eres raro y no puedas defenderte." 
+    "aun te da miedo que piensen que eres rar[pronombre] y no puedas defenderte." 
     hide colegio
 
     "Al final dejas que los dias pasen"
@@ -197,7 +199,7 @@ label cap2:
     show mcM
     "Llegas a tu casa y te miras en el espejo."
 
-    ch "No tengo porque sentirme solo, quiero hablar con alguien de esto."
+    ch "No tengo porque sentirme sol[pronombre], quiero hablar con alguien de esto."
 
     "Te decidiste a hablarlo, ahora la pregunta es ¿quien? "
 
@@ -207,7 +209,7 @@ label cap2:
 
     ch " hmmm…¿quiza la Bea?"
 
-    "Ha sido tu amiga desde que eran chicos, es tu compaÑera de puesto en la escuela y con quien mas confianza tienes, siempre se cuentan todo, no es una mala idea."
+    "Ha sido tu amiga desde que eran chic[pronombre]s, es tu compaÑera de puesto en la escuela y con quien mas confianza tienes, siempre se cuentan todo, no es una mala idea."
 
     ch "tal vez alguien que pueda saber del tema…"
 
@@ -375,11 +377,11 @@ label cap2:
             show plaza
 
             show mc Hablando at left
-            show Hermano Neutro at left
+            show Hermano Neutro at right
 
             ch "Hola Mati. ¿Puedo hablar contigo?"
 
-            Mati "Claro, [name] ¿Qué pasa?"
+            Mati "Claro, [name] ¿Que pasa?"
 
             ch "Es solo que... siento que tu puedes saber mas de esto… bueno, ultimamente me siento un poco confundid[pronombre]. Como si mi cuerpo no coincidiera con lo que siento por dentro."
 
@@ -397,7 +399,7 @@ label cap2:
 
             Mati "Hay muchas formas. Podemos buscar informacion o… puedo hablar yo con mi amiga para que te ayude un poco. "
 
-            ch "¡¿De verdad?! oh muchas gracias Mati. Sabia que ibas a ayudarme."
+            ch "¿De verdad?! oh muchas gracias Mati. Sabia que ibas a ayudarme."
 
             Mati @ Preocupado "¿Le has dicho a alguien mas? A la Bea por ejemplo."
 
