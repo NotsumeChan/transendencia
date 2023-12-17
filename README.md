@@ -19,7 +19,7 @@ Transendencia es una novela visual juvenil que aborda las experiencias de person
 ## Cómo Jugar
 
 1. Descarga la version compactada.
-    https://github.com/NotsumeChan/transendencia/blob/main/releases/Transcendencia-0.1.zip
+    https://github.com/NotsumeChan/transendencia/raw/main/releases/Transcendencia-0.1.zip
 
 2. Descomprime el .zip
 
